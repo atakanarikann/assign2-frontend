@@ -1,0 +1,19 @@
+<div class="container">
+  <h3 class="h3">Add Employee</h3>
+  <div *ngIf="error" class="alert alert-danger">
+    <p>Error: {{ error }}</p>
+  </div>
+
+  <form [formGroup]="employeeForm" (ngSubmit)="addEmployee()" class="employee-form">
+    <input type="text" name="firstname" placeholder="First Name" formControlName="firstname" class="form-control"/>
+    <br/>
+    <input type="text" name="lastname" placeholder="Last Name" formControlName="lastname" class="form-control"/>
+    <br/>
+    <input type="email" name="email" placeholder="Email" formControlName="email" class="form-control"/>
+    <br/>
+    <input type="text" name="username" placeholder="username" formControlName="username" class="form-control"/>
+    <br>
+    <button [disabled]="employeeForm.invalid" type="submit" class="btn btn-primary">Create</button>
+  </form>
+  <br/> <br/> <br/>
+</div>
